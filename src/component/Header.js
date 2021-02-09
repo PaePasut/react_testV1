@@ -6,9 +6,21 @@ const Header = () => {
   const [number, setNumber] = React.useState(0)
   // const [colorChange, setColorchange] = React.useState(false)
 
-  const btn_up = <button style={{ color: 'red'}} onClick={upNumber}>UP !!!!!</button>
-  const btn_down = <button style={{ color: 'red'}} onClick={upDownumber}>DOWN !!!!!</button>
-  const btn_alert = <button style={{ color: 'red'}} onClick={alertA}>DOWN !!!!!</button>
+  const btn_up = (
+    <button style={{ color: 'red' }} onClick={upNumber}>
+      UP !!!!!
+    </button>
+  )
+  const btn_down = (
+    <button style={{ color: 'red' }} onClick={upDownumber}>
+      DOWN !!!!!
+    </button>
+  )
+  const btn_alert = (
+    <button style={{ color: 'red' }} onClick={alertA}>
+      Alert !!!!!
+    </button>
+  )
 
   function upNumber() {
     setNumber(number + 1)
@@ -28,10 +40,14 @@ const Header = () => {
 
   return (
     <div>
-     <Title> T PPKS </Title>
-      <div><h1>{number}</h1></div>
+      <Title> T PPKS </Title>
       <div>
-        {btn_up}{'---'}{btn_down}
+        <h1>{number}</h1>
+      </div>
+      <div>
+        {btn_up}
+        {'---'}
+        {btn_down}
       </div>
       <div>
         <input type='text' />
