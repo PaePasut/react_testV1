@@ -27,7 +27,7 @@ const Header = () => {
     <div>
       <div>{number}</div>
       <div>
-        {btn_up} ||{''}|| {btn_down}
+        {btn_up}  {btn_down}
       </div>
       <div>
         <input type='text' />
