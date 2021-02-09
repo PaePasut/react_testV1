@@ -25,13 +25,12 @@ const Header = () => {
 
   return (
     <div>
-      TEST WOI
       <div>{number}</div>
       <div>
         {btn_up} || {btn_down}
       </div>
       <div>
-        <input type='text' style={colorChange && 'green'} onChange={onChange} />
+        <input type='text' />
         <h2>col</h2>
       </div>
     </div>
