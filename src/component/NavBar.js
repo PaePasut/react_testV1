@@ -7,12 +7,13 @@ import {
   FormControl,
   Button,
 } from 'react-bootstrap'
+import { NavLink } from 'react-router-dom'
 
 const NavBar = () => {
   return (
     <>
       <Navbar bg='dark' expand='lg' variant='dark'>
-        <Navbar.Brand href='#home'>
+        <NavLink className='navbar-brand' to='/' exact>
           <img
             src='./avatar.png'
             width='30'
@@ -21,12 +22,23 @@ const NavBar = () => {
             alt='React Bootstrap logo'
           />{' '}
           React DevTest_v1
-        </Navbar.Brand>
+        </NavLink>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='mr-auto'>
-            <Nav.Link href='#home'>Home</Nav.Link>
-            <Nav.Link href='#link'>Link</Nav.Link>
+            <NavLink className='nav-link' to='/' exact activeClassName='active'>
+              Home
+            </NavLink>
+
+            <NavLink
+              className='nav-link'
+              to='/about'
+              exact
+              activeClassName='active'
+            >
+              About
+            </NavLink>
+
             <NavDropdown title='Dropdown' id='basic-nav-dropdown'>
               <NavDropdown.Item href='#action/3.1'>Action</NavDropdown.Item>
               <NavDropdown.Item href='#action/3.2'>
