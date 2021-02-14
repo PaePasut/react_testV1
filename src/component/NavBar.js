@@ -32,10 +32,13 @@ const NavBar = () => {
 
             <NavLink
               className='nav-link'
-              to='/about'
-              exact
+              to='/product'
               activeClassName='active'
             >
+              Product
+            </NavLink>
+
+            <NavLink className='nav-link' to='/about' activeClassName='active'>
               About
             </NavLink>
 

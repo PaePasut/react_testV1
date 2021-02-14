@@ -2,12 +2,14 @@
 import React from 'react'
 import './App.css'
 import Footer from './component/Footer'
-import Header from './component/Header'
+// import Header from './component/Header'
 import NavBar from './component/NavBar'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
+import ProductPage from './pages/ProductPage'
+import DetailPage from './pages/DetailPage'
 
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 function App() {
   const [isopen, setIsopen] = React.useState(false)
@@ -26,6 +28,12 @@ function App() {
               </Route>
               <Route path='/about'>
                 <AboutPage />
+              </Route>
+              <Route path='/product'>
+                <ProductPage />
+              </Route>
+              <Route path='/detail/:id/title/:title'>
+                <DetailPage />
               </Route>
             </Switch>
             <Footer />

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const HomePage = () => {
   return (
@@ -8,16 +9,15 @@ const HomePage = () => {
         <div className='jumbotron'>
           <div className='container'>
             <h1 className='display-3'>PPKS</h1>
+            <p>Web developed with react (test) By PPKS</p>
             <p>
-              This is a template for a simple marketing or informational
-              website. It includes a large callout called a jumbotron and three
-              supporting pieces of content. Use it as a starting point to create
-              something more unique.
-            </p>
-            <p>
-              <a className='btn btn-primary btn-lg' href='#' role='button'>
-                Learn more »
-              </a>
+              <Link
+                to='/Product'
+                className='btn btn-primary btn-lg'
+                role='button'
+              >
+                สินค้าทั้งหมด
+              </Link>
             </p>
           </div>
         </div>
@@ -33,11 +33,6 @@ const HomePage = () => {
                 Heaven is jealous of our love, angels are crying from up above.
                 Yeah, you take me to utopia.
               </p>
-              <p>
-                <a className='btn btn-secondary' href='#' role='button'>
-                  View details »
-                </a>
-              </p>
             </div>
             <div className='col-md-4'>
               <h2>Heading</h2>
@@ -49,12 +44,8 @@ const HomePage = () => {
                 alright but things were kinda heavy. Heavy is the head that
                 wears the crown.
               </p>
-              <p>
-                <a className='btn btn-secondary' href='#' role='button'>
-                  View details »
-                </a>
-              </p>
             </div>
+
             <div className='col-md-4'>
               <h2>Heading</h2>
               <p>
@@ -62,11 +53,6 @@ const HomePage = () => {
                 hazy. Yeah, she's so in demand. She's sweet as pie but if you
                 break her heart. But down to earth. It's time to face the music
                 I'm no longer your muse. I guess that I forgot I had a choice.
-              </p>
-              <p>
-                <a className='btn btn-secondary' href='#' role='button'>
-                  View details »
-                </a>
               </p>
             </div>
           </div>
