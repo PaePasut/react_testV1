@@ -12,7 +12,7 @@ const DetailPage = () => {
   const [error, setError] = React.useState(null)
   const cancelToken = React.useRef(null)
 
-  const getData = async () => {
+  const getData = async (id) => {
     try {
       setLoading(true)
       const resp = await axios.get(
@@ -33,7 +33,7 @@ const DetailPage = () => {
 
   React.useEffect(() => {
     cancelToken.current = axios.CancelToken.source()
-    getData()
+    getData(id)
 
     return () => {
       //   console.log('exit product page')
