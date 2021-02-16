@@ -63,11 +63,11 @@ const NavBar = () => {
               >
                 หมวดหมู่ข่าว (CRUD)
               </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href='#action/3.4'>
-                Separated link
-              </NavDropdown.Item>
             </NavDropdown>
+
+            <NavLink className='nav-link' to='/upload' activeClassName='active'>
+              Upload
+            </NavLink>
           </Nav>
           <Form inline>
             <FormControl type='text' placeholder='Search' className='mr-sm-2' />
