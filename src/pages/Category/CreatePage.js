@@ -12,7 +12,7 @@ const schema = yup.object().shape({
 })
 
 const CreatePage = () => {
-  let history = useHistory()
+  const history = useHistory()
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
   })

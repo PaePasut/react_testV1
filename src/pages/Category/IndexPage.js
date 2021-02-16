@@ -80,13 +80,18 @@ const IndexPage = () => {
               </tr>
             </thead>
             <tbody>
-              {category.map((h, index) => {
+              {category.map((c, index) => {
                 return (
-                  <tr key={h.id}>
-                    <td>{h.id}</td>
-                    <td>{h.name}</td>
+                  <tr key={c.id}>
+                    <td>{c.id}</td>
+                    <td>{c.name}</td>
                     <td>
-                      <Button className='ml-2' variant='outline-info' size='sm'>
+                      <Button
+                        className='ml-2'
+                        variant='outline-info'
+                        size='sm'
+                        onClick={() => history.push('/category/edit/' + c.id)}
+                      >
                         <BsPencil />
                       </Button>
 
@@ -94,6 +99,19 @@ const IndexPage = () => {
                         className='ml-2'
                         variant='outline-danger'
                         size='sm'
+                        onClick={async () => {
+                          const isConfrim = window.confirm(
+                            'แน่ใจว่าต้องการลบข้อมูล' + c.name + '?'
+                          )
+                          if (isConfrim === true) {
+                            const resp = await axios.delete(
+                              'https://api.codingthailand.com/api/category/' +
+                                c.id
+                            )
+                            alert(resp.data.message)
+                            history.go(0)
+                          }
+                        }}
                       >
                         <BsTrash />
                       </Button>

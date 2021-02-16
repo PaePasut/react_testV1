@@ -16,6 +16,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import IndexPage from './pages/Category/IndexPage'
 import CreatePage from './pages/Category/CreatePage'
 import EditPage from './pages/Category/EditPage'
+import UploadPage from './pages/UploadPage'
 
 const queryClient = new QueryClient()
 
@@ -46,6 +47,9 @@ function App() {
                 </Route>
                 <Route path='/hospital'>
                   <HospitalPage />
+                </Route>
+                <Route path='/upload'>
+                  <UploadPage />
                 </Route>
 
                 <Route
