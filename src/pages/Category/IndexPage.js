@@ -1,8 +1,8 @@
-import React from 'react'
-import axios from 'axios'
-import { Spinner, Table, Button } from 'react-bootstrap'
-import { BsPencil, BsTrash } from 'react-icons/bs'
-import { useHistory } from 'react-router-dom'
+import React from "react"
+import axios from "axios"
+import { Spinner, Table, Button } from "react-bootstrap"
+import { BsPencil, BsTrash } from "react-icons/bs"
+import { useHistory } from "react-router-dom"
 
 const IndexPage = () => {
   const [category, setCategory] = React.useState([])
@@ -15,12 +15,9 @@ const IndexPage = () => {
   const getData = async () => {
     try {
       setLoading(true)
-      const resp = await axios.get(
-        `https://api.codingthailand.com/api/category`,
-        {
-          cancelToken: cancelToken.current.token,
-        }
-      )
+      const resp = await axios.get(`https://api.codingthailand.com/api/category`, {
+        cancelToken: cancelToken.current.token,
+      })
       //   console.log(resp.data.data)
       setCategory(resp.data)
     } catch (error) {
@@ -43,15 +40,15 @@ const IndexPage = () => {
 
   if (loading === true) {
     return (
-      <div className='text-center mt-5'>
-        <Spinner animation='border' variant='primary' />
+      <div className="text-center mt-5">
+        <Spinner animation="border" variant="primary" />
       </div>
     )
   }
 
   if (error) {
     return (
-      <div className='text-center mt-5 text-danger'>
+      <div className="text-center mt-5 text-danger">
         <p> เกิดข้อผิดพลาด </p>
         <p>{JSON.stringify(error)}</p>
       </div>
@@ -59,19 +56,19 @@ const IndexPage = () => {
   }
 
   return (
-    <div className='container'>
-      <div className='row mt-4'>
-        <div className='col-md-12'>
+    <div className="container">
+      <div className="row mt-4">
+        <div className="col-md-12">
           <Button
-            className='mb-3'
-            variant='success'
-            onClick={() => history.push('/category/create')}
+            className="mb-3"
+            variant="success"
+            onClick={() => history.push("/category/create")}
           >
             เพิ่มข้อมูล
           </Button>
 
           <h2>HospitalPage</h2>
-          <Table striped bordered hover size='sm'>
+          <Table striped bordered hover size="sm">
             <thead>
               <tr>
                 <th>id</th>
@@ -87,26 +84,23 @@ const IndexPage = () => {
                     <td>{c.name}</td>
                     <td>
                       <Button
-                        className='ml-2'
-                        variant='outline-info'
-                        size='sm'
-                        onClick={() => history.push('/category/edit/' + c.id)}
+                        className="ml-2"
+                        variant="outline-info"
+                        size="sm"
+                        onClick={() => history.push("/category/edit/" + c.id)}
                       >
                         <BsPencil />
                       </Button>
 
                       <Button
-                        className='ml-2'
-                        variant='outline-danger'
-                        size='sm'
+                        className="ml-2"
+                        variant="outline-danger"
+                        size="sm"
                         onClick={async () => {
-                          const isConfrim = window.confirm(
-                            'แน่ใจว่าต้องการลบข้อมูล' + c.name + '?'
-                          )
+                          const isConfrim = window.confirm("แน่ใจว่าต้องการลบข้อมูล" + c.name + "?")
                           if (isConfrim === true) {
                             const resp = await axios.delete(
-                              'https://api.codingthailand.com/api/category/' +
-                                c.id
+                              "https://api.codingthailand.com/api/category/" + c.id
                             )
                             alert(resp.data.message)
                             history.go(0)

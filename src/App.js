@@ -20,6 +20,8 @@ import IndexPage from "./pages/Category/IndexPage"
 import CreatePage from "./pages/Category/CreatePage"
 import EditPage from "./pages/Category/EditPage"
 import UploadPage from "./pages/UploadPage"
+import RegisterPage from "./pages/RegisterPage"
+import LoginPage from "./pages/LoginPage"
 
 const queryClient = new QueryClient()
 
@@ -54,6 +56,12 @@ function App() {
                   </Route>
                   <Route path="/upload">
                     <UploadPage />
+                  </Route>
+                  <Route path="/register">
+                    <RegisterPage />
+                  </Route>
+                  <Route path="/login">
+                    <LoginPage />
                   </Route>
 
                   <Route
