@@ -25,12 +25,11 @@ const UploadPage = () => {
       reader.readAsDataURL(fileUpload)
       reader.onload = async (e) => {
         let base64Image = e.target.result
-        console.log(base64Image)
+        // console.log(base64Image)
         const apiUrl = "https://api.codingthailand.com/api/upload"
         const resp = await axios.post(apiUrl, {
           picture: base64Image,
         })
-
         // alert(resp.data.data.message)
         // console.log(resp.data.data.url)
         addToast(resp.data.data.message, {

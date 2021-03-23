@@ -32,59 +32,59 @@ function App() {
     <>
       <ToastProvider placement="top-center">
         <QueryClientProvider client={queryClient}>
-          <Router>
-            {isopen ? (
-              <h1>Login</h1>
-            ) : (
-              <>
-                <NavBar />
-                <Switch>
-                  <Route exact path="/">
-                    <HomePage />
-                  </Route>
-                  <Route path="/about">
-                    <AboutPage />
-                  </Route>
-                  <Route path="/product">
-                    <ProductPage />
-                  </Route>
-                  <Route path="/detail/:id/title/:title">
-                    <DetailPage />
-                  </Route>
-                  <Route path="/hospital">
-                    <HospitalPage />
-                  </Route>
-                  <Route path="/upload">
-                    <UploadPage />
-                  </Route>
-                  <Route path="/register">
-                    <RegisterPage />
-                  </Route>
-                  <Route path="/login">
-                    <LoginPage />
-                  </Route>
+          {/* <Router> */}
+          {isopen ? (
+            <h1>Login</h1>
+          ) : (
+            <>
+              <NavBar />
+              <Switch>
+                <Route exact path="/">
+                  <HomePage />
+                </Route>
+                <Route path="/about">
+                  <AboutPage />
+                </Route>
+                <Route path="/product">
+                  <ProductPage />
+                </Route>
+                <Route path="/detail/:id/title/:title">
+                  <DetailPage />
+                </Route>
+                <Route path="/hospital">
+                  <HospitalPage />
+                </Route>
+                <Route path="/upload">
+                  <UploadPage />
+                </Route>
+                <Route path="/register">
+                  <RegisterPage />
+                </Route>
+                <Route path="/login">
+                  <LoginPage />
+                </Route>
 
-                  <Route
-                    path="/category"
-                    render={({ match: { url } }) => (
-                      <>
-                        <Route path={`${url}/`} exact>
-                          <IndexPage />
-                        </Route>
-                        <Route path={`${url}/create`}>
-                          <CreatePage />
-                        </Route>
-                        <Route path={`${url}/edit/:id`}>
-                          <EditPage />
-                        </Route>
-                      </>
-                    )}
-                  ></Route>
-                </Switch>
-                <Footer />
-              </>
-            )}
-          </Router>
+                <Route
+                  path="/category"
+                  render={({ match: { url } }) => (
+                    <>
+                      <Route path={`${url}/`} exact>
+                        <IndexPage />
+                      </Route>
+                      <Route path={`${url}/create`}>
+                        <CreatePage />
+                      </Route>
+                      <Route path={`${url}/edit/:id`}>
+                        <EditPage />
+                      </Route>
+                    </>
+                  )}
+                ></Route>
+              </Switch>
+              <Footer />
+            </>
+          )}
+          {/* </Router> */}
         </QueryClientProvider>
       </ToastProvider>
     </>
